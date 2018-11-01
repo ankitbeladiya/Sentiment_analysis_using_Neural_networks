@@ -1,0 +1,6 @@
+data
+__pycache__
+.idea
+*.pickle
+Tensorboad_NN.py
+logs
