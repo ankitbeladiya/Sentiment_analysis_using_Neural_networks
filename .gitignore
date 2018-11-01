@@ -1,6 +1,6 @@
 data
 __pycache__
 .idea
-*.pickle
+sentiment_set.pickle
 Tensorboad_NN.py
 logs
