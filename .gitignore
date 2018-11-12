@@ -4,3 +4,4 @@ __pycache__
 sentiment_set.pickle
 Tensorboad_NN.py
 logs
+checkpoints

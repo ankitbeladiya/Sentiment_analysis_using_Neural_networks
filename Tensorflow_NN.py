@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from twitter_data_processing import create_feature_sets_and_labels
 
-X_train, X_test, y_train, y_test = create_feature_sets_and_labels('data/training.csv',featureSize=10000)
+X_train, X_test, y_train, y_test = create_feature_sets_and_labels('data/training.csv',featureSize=1000000)
 
 
 l1_node = 550
@@ -41,7 +41,7 @@ def train_nn(x):
     cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=prediction, labels=y))
     optimize = tf.train.AdamOptimizer().minimize(cost)
 
-    cycle = 1
+    cycle = 100 
 
     with tf.Session() as sesson:
         sesson.run(tf.global_variables_initializer())
