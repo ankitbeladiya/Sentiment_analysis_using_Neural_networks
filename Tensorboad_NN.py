@@ -27,6 +27,7 @@ class nn(object):
         self.Layer_2_neurons = 500
         self.Layer_3_neurons = 500
 
+    @staticmethod
     def _normalize_document(self, sentence):
         wlp = nltk.WordPunctTokenizer()
 
@@ -74,9 +75,7 @@ class nn(object):
                                                                                 random_state=0, test_size=0.1)
 
     def _word2vec(self):
-        """
-			step 3: converting data into term frequency matrix
-		"""
+        """ step 3: converting data into term frequency matrix """
         self.vect = TfidfVectorizer(ngram_range=(1, 2))
         self.X_train = self.vect.fit_transform(self.X_train)
         self.X_test = self.vect.transform(self.X_test)
@@ -163,7 +162,7 @@ class nn(object):
                 saver.restore(sess, ckpt.model_checkpoint_path)
 
             # initializer summary writer and summary path
-            writer = tf.summary.FileWriter('logs/' + str(self.lr), sess.graph)
+            writer = tf.summary.FileWriter('logs' + str(self.lr), sess.graph)
             initial_step = self.global_step.eval()
 
             # bath processing

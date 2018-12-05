@@ -4,3 +4,5 @@ __pycache__
 sentiment_set.pickle
 logs
 checkpoints
+Tensorflow_NN.py
+twitter_data_processing.py
